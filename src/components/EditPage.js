@@ -5,8 +5,11 @@ class EditPage extends Component {
   render() {
     return (
       <div>
-        <h3>Personal Info</h3>
-        <PersonalInfo />
+        <PersonalInfo
+          sectionStatus={this.props.sectionStatus.PersonalInfo}
+          onPageStatusChange={this.onPageStatusChange}
+          onSectionStatusChange={this.props.onSectionStatusChange}
+        />
       </div>
     );
   }
