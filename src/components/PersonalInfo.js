@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import EditIcon from '@material-ui/icons/Edit';
+import EditOutlinedIcon from '@mui/icons-material/EditOutlined';
 import '../styles/style.css';
 
 class PersonalInfo extends Component {
@@ -13,10 +13,7 @@ class PersonalInfo extends Component {
 
   resetEditState = () => {
     this.setState({editState: this.state.previousState});
-  };
-
-  resetPreviousState = () => {
-    this.setState({previousState: this.state.editState});
+    this.props.onSectionStatusChange('PersonalInfo', 'submitted');
   };
 
   handleSubmit = (e) => {
@@ -31,8 +28,8 @@ class PersonalInfo extends Component {
   };
 
   render() {
-    const inputs = this.state.editState;
     const sectionStatus = this.props.sectionStatus;
+    const previousState = this.state.previousState;
     if (sectionStatus === 'preview') {
       return <div></div>;
     } else if (sectionStatus === 'submitted') {
@@ -46,52 +43,55 @@ class PersonalInfo extends Component {
                 this.props.onSectionStatusChange('PersonalInfo', 'edit')
               }
             >
-              <EditIcon fontSize="small" />
+              <EditOutlinedIcon fontSize="small" />
             </button>
           </div>
-          <p>Name: {this.state.previousState.name}</p>
-          <p>Email: {this.state.previousState.email}</p>
-          <p>Phone Number: {this.state.previousState.phoneNum}</p>
+          <p>Name: {previousState.name}</p>
+          <p>Email: {previousState.email}</p>
+          <p>Phone Number: {previousState.phoneNum}</p>
         </div>
       );
     }
     // Edit Mode
+    const inputs = this.state.editState;
     return (
       <div>
         <h3>Personal Info</h3>
         <form onSubmit={this.handleSubmit}>
-          <div>
-            <label htmlFor="name">Name: </label>
+          <div className="input-container">
+            <label htmlFor="personal-info-name">Name: </label>
             <input
               type="text"
-              id="name"
+              id="personal-info-name"
               name="name"
               value={inputs.name}
               onChange={this.handleInputChange}
             ></input>
           </div>
-          <div>
-            <label htmlFor="email">Email: </label>
+          <div className="input-container">
+            <label htmlFor="personal-info-email">Email: </label>
             <input
               type="text"
-              id="email"
+              id="personal-info-email"
               name="email"
               value={inputs.email}
               onChange={this.handleInputChange}
             ></input>
           </div>
-          <div>
-            <label htmlFor="phone-num">Phone Number: </label>
+          <div className="input-container">
+            <label htmlFor="personal-info-phone-num">Phone Number: </label>
             <input
               type="text"
-              id="phone-num"
+              id="personal-info-phone-num"
               name="phoneNum"
               value={inputs.phoneNum}
               onChange={this.handleInputChange}
             ></input>
           </div>
           <input type="submit" value="Submit"></input>
-          <button onClick={this.resetEditState}>Cancel</button>
+          <button type="button" onClick={this.resetEditState}>
+            Cancel
+          </button>
         </form>
       </div>
     );

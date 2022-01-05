@@ -8,8 +8,8 @@ class App extends Component {
       pageStatus: 'edit',
       sectionStatus: {
         PersonalInfo: 'edit',
-        Education: 'empty',
-        WorkExperience: 'empty',
+        Education: 'edit',
+        WorkExperience: 'edit',
       },
     };
     this.handlePageStatus.bind(this);
@@ -34,6 +34,7 @@ class App extends Component {
     if (this.state.pageStatus === 'preview') {
       return <div></div>;
     }
+    // Edit Mode
     return (
       <div>
         <EditPage

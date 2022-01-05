@@ -22,19 +22,46 @@ ul {
   margin: 0;
 }
 
+.input-container {
+  display: flex;
+  justify-content: space-between;
+  width: 300px;
+}
+
+.from-to-container {
+  display: flex;
+  justify-content: space-between;
+  width: 484px;
+}
+
 .edit-section-header {
   display: flex;
   align-items: center;
   gap: 4px;
 }
 
-.edit-button {
+.edit-delete-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.edit-button,
+.delete-button {
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: white;
-  color: gray;
   height: 20px;
   width: 20px;
   border: none;
+  cursor: pointer;
+}
+
+.edit-button {
+  color: green;
+}
+
+.delete-button {
+  color: gray;
 }
