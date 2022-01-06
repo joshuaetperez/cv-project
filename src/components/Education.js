@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import EditOutlinedIcon from '@mui/icons-material/EditOutlined';
 import DeleteIcon from '@mui/icons-material/Delete';
 import uniqid from 'uniqid';
+import EducationForm from './EducationForm';
 import '../styles/style.css';
 
 class Education extends Component {
@@ -11,6 +12,9 @@ class Education extends Component {
       schoolArr: [],
       editState: this.initEditState(),
     };
+    this.resetEditState.bind(this);
+    this.handleSubmit.bind(this);
+    this.handleInputChange.bind(this);
   }
 
   initEditState = () => {
@@ -62,7 +66,6 @@ class Education extends Component {
   };
 
   render() {
-    const inputs = this.state.editState;
     const sectionStatus = this.props.sectionStatus;
     if (sectionStatus === 'preview') {
       return <div></div>;
@@ -116,65 +119,13 @@ class Education extends Component {
             if (schoolObj.id === this.state.editState.id) {
               return (
                 <div key={schoolObj.id}>
-                  <form onSubmit={this.handleSubmit}>
-                    <div className="input-container">
-                      <label htmlFor="school">School: </label>
-                      <input
-                        type="text"
-                        id="education-name"
-                        name="school"
-                        value={inputs.school}
-                        onChange={this.handleInputChange}
-                      ></input>
-                    </div>
-                    <div className="input-container">
-                      <label htmlFor="education-city">City: </label>
-                      <input
-                        type="text"
-                        id="education-city"
-                        name="city"
-                        value={inputs.city}
-                        onChange={this.handleInputChange}
-                      ></input>
-                    </div>
-                    <div className="input-container">
-                      <label htmlFor="education-degree">Degree: </label>
-                      <input
-                        type="text"
-                        id="education-degree"
-                        name="degree"
-                        value={inputs.degree}
-                        onChange={this.handleInputChange}
-                      ></input>
-                    </div>
-                    <div className="from-to-container">
-                      <div>
-                        <label htmlFor="education-from">From - </label>
-                        <label htmlFor="education-to">To: </label>
-                      </div>
-                      <div>
-                        <input
-                          type="text"
-                          id="education-from"
-                          name="from"
-                          value={inputs.from}
-                          onChange={this.handleInputChange}
-                        ></input>
-                        <span> - </span>
-                        <input
-                          type="text"
-                          id="education-to"
-                          name="to"
-                          value={inputs.to}
-                          onChange={this.handleInputChange}
-                        ></input>
-                      </div>
-                    </div>
-                    <input type="submit" value="Submit"></input>
-                    <button type="button" onClick={this.resetEditState}>
-                      Cancel
-                    </button>
-                  </form>
+                  <EducationForm
+                    schoolArr={this.state.schoolArr}
+                    editState={this.state.editState}
+                    onEditStateReset={this.resetEditState}
+                    onFormSubmit={this.handleSubmit}
+                    onInputChange={this.handleInputChange}
+                  />
                 </div>
               );
             } else {
@@ -207,65 +158,13 @@ class Education extends Component {
               </div>
             );
           })}
-          <form onSubmit={this.handleSubmit}>
-            <div className="input-container">
-              <label htmlFor="school">School: </label>
-              <input
-                type="text"
-                id="education-name"
-                name="school"
-                value={inputs.school}
-                onChange={this.handleInputChange}
-              ></input>
-            </div>
-            <div className="input-container">
-              <label htmlFor="education-city">City: </label>
-              <input
-                type="text"
-                id="education-city"
-                name="city"
-                value={inputs.city}
-                onChange={this.handleInputChange}
-              ></input>
-            </div>
-            <div className="input-container">
-              <label htmlFor="education-degree">Degree: </label>
-              <input
-                type="text"
-                id="education-degree"
-                name="degree"
-                value={inputs.degree}
-                onChange={this.handleInputChange}
-              ></input>
-            </div>
-            <div className="from-to-container">
-              <div>
-                <label htmlFor="education-from">From - </label>
-                <label htmlFor="education-to">To: </label>
-              </div>
-              <div>
-                <input
-                  type="text"
-                  id="education-from"
-                  name="from"
-                  value={inputs.from}
-                  onChange={this.handleInputChange}
-                ></input>
-                <span> - </span>
-                <input
-                  type="text"
-                  id="education-to"
-                  name="to"
-                  value={inputs.to}
-                  onChange={this.handleInputChange}
-                ></input>
-              </div>
-            </div>
-            <input type="submit" value="Submit"></input>
-            <button type="button" onClick={this.resetEditState}>
-              Cancel
-            </button>
-          </form>
+          <EducationForm
+            schoolArr={this.state.schoolArr}
+            editState={this.state.editState}
+            onEditStateReset={this.resetEditState}
+            onFormSubmit={this.handleSubmit}
+            onInputChange={this.handleInputChange}
+          />
         </div>
       );
     }
