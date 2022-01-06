@@ -8,7 +8,7 @@ class App extends Component {
       pageStatus: 'edit',
       sectionStatus: {
         PersonalInfo: 'edit',
-        Education: 'edit',
+        Education: 'add',
         WorkExperience: 'edit',
       },
     };
