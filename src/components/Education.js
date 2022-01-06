@@ -31,13 +31,28 @@ class Education extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
+    // Check if the user has filled in all the form fields
+    const editState = this.state.editState;
+    if (
+      editState.school === '' ||
+      editState.city === '' ||
+      editState.degree === '' ||
+      editState.from === '' ||
+      editState.to === ''
+    ) {
+      const errorDiv = document.getElementById('education-field-empty-error');
+      errorDiv.textContent = 'Please fill in all of the fields';
+      return;
+    }
+
     const schoolArr = this.state.schoolArr;
     let newSchoolState;
     const index = schoolArr.findIndex(
-      (schoolObj) => schoolObj.id === this.state.editState.id
+      (schoolObj) => schoolObj.id === editState.id
     );
+    // If the user is editing a school's information, replace it
     if (index >= 0) {
-      newSchoolState = this.state.editState;
+      newSchoolState = editState;
       this.setState(
         {
           schoolArr: schoolArr
@@ -47,8 +62,10 @@ class Education extends Component {
         },
         () => console.log(this.state.schoolArr)
       );
-    } else {
-      newSchoolState = {...this.state.editState, id: uniqid()};
+    }
+    // Else, the user is adding a new school
+    else {
+      newSchoolState = {...editState, id: uniqid()};
       this.setState(
         {
           schoolArr: [...this.state.schoolArr, newSchoolState],

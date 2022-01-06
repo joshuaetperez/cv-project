@@ -65,3 +65,8 @@ ul {
 .delete-button {
   color: gray;
 }
+
+#personal-info-field-empty-error,
+#education-field-empty-error {
+  color: red;
+}

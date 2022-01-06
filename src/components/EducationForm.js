@@ -63,6 +63,7 @@ class EducationForm extends Component {
         <button type="button" onClick={this.props.onEditStateReset}>
           Cancel
         </button>
+        <div id="education-field-empty-error"></div>
       </form>
     );
   }

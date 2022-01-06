@@ -18,6 +18,20 @@ class PersonalInfo extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
+    // Check if the user has filled in all the form fields
+    const editState = this.state.editState;
+    if (
+      editState.name === '' ||
+      editState.email === '' ||
+      editState.phoneNum === ''
+    ) {
+      const errorDiv = document.getElementById(
+        'personal-info-field-empty-error'
+      );
+      errorDiv.textContent = 'Please fill in all of the fields';
+      return;
+    }
+    // Replace previous information with the new information
     this.setState({previousState: this.state.editState});
     this.props.onSectionStatusChange('PersonalInfo', 'submitted');
   };
@@ -92,6 +106,7 @@ class PersonalInfo extends Component {
           <button type="button" onClick={this.resetEditState}>
             Cancel
           </button>
+          <div id="personal-info-field-empty-error"></div>
         </form>
       </div>
     );
