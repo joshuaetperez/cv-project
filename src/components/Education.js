@@ -88,7 +88,17 @@ class Education extends Component {
                   </button>
                   <button
                     className="delete-button"
-                    onClick={(e) => console.log('Delete not implemented yet.')}
+                    onClick={(e) => {
+                      const schoolArr = this.state.schoolArr;
+                      const index = schoolArr.findIndex(
+                        (schoolElem) => schoolElem.id === schoolObj.id
+                      );
+                      this.setState({
+                        schoolArr: schoolArr
+                          .slice(0, index)
+                          .concat(schoolArr.slice(index + 1)),
+                      });
+                    }}
                   >
                     <DeleteIcon fontSize="small" />
                   </button>
