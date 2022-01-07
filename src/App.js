@@ -32,7 +32,7 @@ class App extends Component {
     });
   };
 
-  checkIfPreviewMode = () => {
+  checkIfInPreviewMode = () => {
     const sectionStatus = this.state.sectionStatus;
     for (let status in sectionStatus) {
       if (sectionStatus[status] !== 'preview') {
@@ -44,22 +44,26 @@ class App extends Component {
 
   render() {
     return (
-      <div>
-        <PersonalInfo
-          sectionStatus={this.state.sectionStatus.PersonalInfo}
-          onSectionStatusChange={this.handleSectionStatus}
-        />
-        <Education
-          sectionStatus={this.state.sectionStatus.Education}
-          onSectionStatusChange={this.handleSectionStatus}
-        />
-        <WorkExperience
-          sectionStatus={this.state.sectionStatus.WorkExperience}
-          onSectionStatusChange={this.handleSectionStatus}
-        />
-        {!this.checkIfPreviewMode() && (
-          <button onClick={this.togglePreviewMode}>Preview</button>
-        )}
+      <div className="page-container">
+        <div className="info-container">
+          <PersonalInfo
+            sectionStatus={this.state.sectionStatus.PersonalInfo}
+            onSectionStatusChange={this.handleSectionStatus}
+          />
+          <Education
+            sectionStatus={this.state.sectionStatus.Education}
+            onSectionStatusChange={this.handleSectionStatus}
+          />
+          <WorkExperience
+            sectionStatus={this.state.sectionStatus.WorkExperience}
+            onSectionStatusChange={this.handleSectionStatus}
+          />
+          {!this.checkIfInPreviewMode() && (
+            <div className="button-container">
+              <button onClick={this.togglePreviewMode}>Preview</button>
+            </div>
+          )}
+        </div>
       </div>
     );
   }

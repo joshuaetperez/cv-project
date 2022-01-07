@@ -70,10 +70,12 @@ class WorkExperienceForm extends Component {
             cols="50"
           ></textarea>
         </div>
-        <input type="submit" value="Submit"></input>
-        <button type="button" onClick={this.props.onEditStateReset}>
-          Cancel
-        </button>
+        <div className="button-container">
+          <input type="submit" value="Submit"></input>
+          <button type="button" onClick={this.resetEditState}>
+            Cancel
+          </button>
+        </div>
         <div id="work-experience-field-empty-error"></div>
       </form>
     );

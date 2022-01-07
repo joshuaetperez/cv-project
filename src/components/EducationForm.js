@@ -59,10 +59,12 @@ class EducationForm extends Component {
             ></input>
           </div>
         </div>
-        <input type="submit" value="Submit"></input>
-        <button type="button" onClick={this.props.onEditStateReset}>
-          Cancel
-        </button>
+        <div className="button-container">
+          <input type="submit" value="Submit"></input>
+          <button type="button" onClick={this.resetEditState}>
+            Cancel
+          </button>
+        </div>
         <div id="education-field-empty-error"></div>
       </form>
     );
