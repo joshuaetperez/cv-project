@@ -22,6 +22,26 @@ class App extends Component {
     });
   };
 
+  togglePreviewMode = () => {
+    this.setState({
+      sectionStatus: {
+        PersonalInfo: 'preview',
+        Education: 'preview',
+        WorkExperience: 'preview',
+      },
+    });
+  };
+
+  checkIfPreviewMode = () => {
+    const sectionStatus = this.state.sectionStatus;
+    for (let status in sectionStatus) {
+      if (sectionStatus[status] !== 'preview') {
+        return false;
+      }
+    }
+    return true;
+  };
+
   render() {
     return (
       <div>
@@ -37,6 +57,9 @@ class App extends Component {
           sectionStatus={this.state.sectionStatus.WorkExperience}
           onSectionStatusChange={this.handleSectionStatus}
         />
+        {!this.checkIfPreviewMode() && (
+          <button onClick={this.togglePreviewMode}>Preview</button>
+        )}
       </div>
     );
   }

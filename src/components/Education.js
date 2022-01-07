@@ -79,7 +79,7 @@ class Education extends Component {
   render() {
     const sectionStatus = this.props.sectionStatus;
     if (sectionStatus === 'preview') {
-      return <div></div>;
+      return <div>Education Preview</div>;
     } else if (sectionStatus === 'submitted') {
       return (
         <div>

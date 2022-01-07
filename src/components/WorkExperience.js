@@ -64,25 +64,19 @@ class WorkExperience extends Component {
     // If the user is editing a company's information, replace it
     if (index >= 0) {
       newCompanyState = editState;
-      this.setState(
-        {
-          companyArr: companyArr
-            .slice(0, index)
-            .concat(newCompanyState)
-            .concat(companyArr.slice(index + 1)),
-        },
-        () => console.log(this.state.companyArr)
-      );
+      this.setState({
+        companyArr: companyArr
+          .slice(0, index)
+          .concat(newCompanyState)
+          .concat(companyArr.slice(index + 1)),
+      });
     }
     // Else, the user is adding a new company
     else {
       newCompanyState = {...editState, id: uniqid()};
-      this.setState(
-        {
-          companyArr: [...this.state.companyArr, newCompanyState],
-        },
-        () => console.log(this.state.companyArr)
-      );
+      this.setState({
+        companyArr: [...this.state.companyArr, newCompanyState],
+      });
     }
     this.setPreviousState(newCompanyState);
     this.props.onSectionStatusChange('WorkExperience', 'submitted');
@@ -96,7 +90,7 @@ class WorkExperience extends Component {
   render() {
     const sectionStatus = this.props.sectionStatus;
     if (sectionStatus === 'preview') {
-      return <div></div>;
+      return <div>WorkExperience Preview</div>;
     } else if (sectionStatus === 'submitted') {
       return (
         <div>
