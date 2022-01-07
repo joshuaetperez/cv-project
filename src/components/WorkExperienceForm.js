@@ -1,50 +1,50 @@
 import React, {Component} from 'react';
 import '../styles/style.css';
 
-class EducationForm extends Component {
+class WorkExperienceForm extends Component {
   render() {
     const inputs = this.props.editState;
     return (
       <form onSubmit={this.props.onFormSubmit}>
         <div className="input-container">
-          <label htmlFor="education-school">School: </label>
+          <label htmlFor="work-experience-company">Company: </label>
           <input
             type="text"
-            id="education-school"
-            name="school"
-            value={inputs.school}
+            id="work-experience-company"
+            name="company"
+            value={inputs.company}
             onChange={this.props.onInputChange}
           ></input>
         </div>
         <div className="input-container">
-          <label htmlFor="education-city">City: </label>
+          <label htmlFor="work-experience-city">City: </label>
           <input
             type="text"
-            id="education-city"
+            id="work-experience-city"
             name="city"
             value={inputs.city}
             onChange={this.props.onInputChange}
           ></input>
         </div>
         <div className="input-container">
-          <label htmlFor="education-degree">Degree: </label>
+          <label htmlFor="work-experience-position">Position: </label>
           <input
             type="text"
-            id="education-degree"
-            name="degree"
-            value={inputs.degree}
+            id="work-experience-position"
+            name="position"
+            value={inputs.position}
             onChange={this.props.onInputChange}
           ></input>
         </div>
         <div className="from-to-container">
           <div>
-            <label htmlFor="education-from">From - </label>
-            <label htmlFor="education-to">To: </label>
+            <label htmlFor="work-experience-from">From - </label>
+            <label htmlFor="work-experience-to">To: </label>
           </div>
           <div>
             <input
               type="text"
-              id="education-from"
+              id="work-experience-from"
               name="from"
               value={inputs.from}
               onChange={this.props.onInputChange}
@@ -52,21 +52,32 @@ class EducationForm extends Component {
             <span> - </span>
             <input
               type="text"
-              id="education-to"
+              id="work-experience-to"
               name="to"
               value={inputs.to}
               onChange={this.props.onInputChange}
             ></input>
           </div>
         </div>
+        <div className="details-container">
+          <label htmlFor="work-experience-details">Details: </label>
+          <textarea
+            id="work-experience-details"
+            name="details"
+            value={inputs.details}
+            onChange={this.props.onInputChange}
+            rows="4"
+            cols="50"
+          ></textarea>
+        </div>
         <input type="submit" value="Submit"></input>
         <button type="button" onClick={this.props.onEditStateReset}>
           Cancel
         </button>
-        <div id="education-field-empty-error"></div>
+        <div id="work-experience-field-empty-error"></div>
       </form>
     );
   }
 }
 
-export default EducationForm;
+export default WorkExperienceForm;

@@ -53,25 +53,19 @@ class Education extends Component {
     // If the user is editing a school's information, replace it
     if (index >= 0) {
       newSchoolState = editState;
-      this.setState(
-        {
-          schoolArr: schoolArr
-            .slice(0, index)
-            .concat(newSchoolState)
-            .concat(schoolArr.slice(index + 1)),
-        },
-        () => console.log(this.state.schoolArr)
-      );
+      this.setState({
+        schoolArr: schoolArr
+          .slice(0, index)
+          .concat(newSchoolState)
+          .concat(schoolArr.slice(index + 1)),
+      });
     }
     // Else, the user is adding a new school
     else {
       newSchoolState = {...editState, id: uniqid()};
-      this.setState(
-        {
-          schoolArr: [...this.state.schoolArr, newSchoolState],
-        },
-        () => console.log(this.state.schoolArr)
-      );
+      this.setState({
+        schoolArr: [...this.state.schoolArr, newSchoolState],
+      });
     }
     this.setPreviousState(newSchoolState);
     this.props.onSectionStatusChange('Education', 'submitted');

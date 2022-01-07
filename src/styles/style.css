@@ -34,6 +34,12 @@ ul {
   width: 484px;
 }
 
+.details-container {
+  display: flex;
+  justify-content: space-between;
+  width: 515px;
+}
+
 .edit-section-header {
   display: flex;
   align-items: center;
@@ -67,6 +73,12 @@ ul {
 }
 
 #personal-info-field-empty-error,
-#education-field-empty-error {
+#education-field-empty-error,
+#work-experience-field-empty-error {
   color: red;
 }
+
+/* #work-experience-details {
+  height: 30px;
+  width: 355px;
+} */

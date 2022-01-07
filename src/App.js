@@ -1,28 +1,20 @@
 import React, {Component} from 'react';
-import EditPage from './components/EditPage';
+import Education from './components/Education';
+import PersonalInfo from './components/PersonalInfo';
+import WorkExperience from './components/WorkExperience';
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      pageStatus: 'edit',
       sectionStatus: {
         PersonalInfo: 'edit',
         Education: 'add',
-        WorkExperience: 'edit',
+        WorkExperience: 'add',
       },
     };
-    this.handlePageStatus.bind(this);
     this.handleSectionStatus.bind(this);
   }
-
-  handlePageStatus = () => {
-    if (this.state.pageStatus === 'preview') {
-      this.setState({pageStatus: 'edit'});
-    } else {
-      this.setState({pageStatus: 'preview'});
-    }
-  };
 
   handleSectionStatus = (section, newStatus) => {
     this.setState({
@@ -31,15 +23,18 @@ class App extends Component {
   };
 
   render() {
-    if (this.state.pageStatus === 'preview') {
-      return <div></div>;
-    }
-    // Edit Mode
     return (
       <div>
-        <EditPage
-          sectionStatus={this.state.sectionStatus}
-          onPageStatusChange={this.handlePageStatus}
+        <PersonalInfo
+          sectionStatus={this.state.sectionStatus.PersonalInfo}
+          onSectionStatusChange={this.handleSectionStatus}
+        />
+        <Education
+          sectionStatus={this.state.sectionStatus.Education}
+          onSectionStatusChange={this.handleSectionStatus}
+        />
+        <WorkExperience
+          sectionStatus={this.state.sectionStatus.WorkExperience}
           onSectionStatusChange={this.handleSectionStatus}
         />
       </div>
