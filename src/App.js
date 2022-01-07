@@ -44,8 +44,8 @@ class App extends Component {
 
   render() {
     return (
-      <div className="page-container">
-        <div className="info-container">
+      <div className="page-flex-container">
+        <div className="page">
           <PersonalInfo
             sectionStatus={this.state.sectionStatus.PersonalInfo}
             onSectionStatusChange={this.handleSectionStatus}
@@ -60,7 +60,12 @@ class App extends Component {
           />
           {!this.checkIfInPreviewMode() && (
             <div className="button-container">
-              <button onClick={this.togglePreviewMode}>Preview</button>
+              <button
+                className="preview-button"
+                onClick={this.togglePreviewMode}
+              >
+                Preview
+              </button>
             </div>
           )}
         </div>

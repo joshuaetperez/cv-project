@@ -48,8 +48,8 @@ class PersonalInfo extends Component {
       return <div>PersonalInfo Preview</div>;
     } else if (sectionStatus === 'submitted') {
       return (
-        <div>
-          <div className="edit-section-header">
+        <div className="section">
+          <div className="section-header">
             <h3>Personal Info</h3>
             <button
               className="edit-button"
@@ -60,17 +60,21 @@ class PersonalInfo extends Component {
               <EditOutlinedIcon fontSize="small" />
             </button>
           </div>
-          <p>Name: {previousState.name}</p>
-          <p>Email: {previousState.email}</p>
-          <p>Phone Number: {previousState.phoneNum}</p>
+          <div className="info-container">
+            <p>Name: {previousState.name}</p>
+            <p>Email: {previousState.email}</p>
+            <p>Phone Number: {previousState.phoneNum}</p>
+          </div>
         </div>
       );
     }
     // Edit Mode
     const inputs = this.state.editState;
     return (
-      <div>
-        <h3>Personal Info</h3>
+      <div className="section">
+        <div className="section-header">
+          <h3>Personal Info</h3>
+        </div>
         <form onSubmit={this.handleSubmit}>
           <div className="input-container">
             <label htmlFor="personal-info-name">Name: </label>

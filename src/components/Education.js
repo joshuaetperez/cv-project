@@ -82,11 +82,13 @@ class Education extends Component {
       return <div>Education Preview</div>;
     } else if (sectionStatus === 'submitted') {
       return (
-        <div>
-          <h3>Education</h3>
+        <div className="section">
+          <div className="section-header">
+            <h3>Education</h3>
+          </div>
           {this.state.schoolArr.map((schoolObj) => {
             return (
-              <div key={schoolObj.id}>
+              <div className="info-container" key={schoolObj.id}>
                 <div className="edit-delete-container">
                   <button
                     className="edit-button"
@@ -134,12 +136,14 @@ class Education extends Component {
       );
     } else if (sectionStatus === 'edit') {
       return (
-        <div>
-          <h3>Education</h3>
+        <div className="section">
+          <div className="section-header">
+            <h3>Education</h3>
+          </div>
           {this.state.schoolArr.map((schoolObj) => {
             if (schoolObj.id === this.state.editState.id) {
               return (
-                <div key={schoolObj.id}>
+                <div className="info-container" key={schoolObj.id}>
                   <EducationForm
                     schoolArr={this.state.schoolArr}
                     editState={this.state.editState}
@@ -151,7 +155,7 @@ class Education extends Component {
               );
             } else {
               return (
-                <div key={schoolObj.id}>
+                <div className="info-container" key={schoolObj.id}>
                   <p>School: {schoolObj.school}</p>
                   <p>City: {schoolObj.city}</p>
                   <p>Degree: {schoolObj.degree}</p>
@@ -166,11 +170,13 @@ class Education extends Component {
     } else {
       // Add Mode
       return (
-        <div>
-          <h3>Education</h3>
+        <div className="section">
+          <div className="section-header">
+            <h3>Education</h3>
+          </div>
           {this.state.schoolArr.map((schoolObj) => {
             return (
-              <div key={schoolObj.id}>
+              <div className="info-container" key={schoolObj.id}>
                 <p>School: {schoolObj.school}</p>
                 <p>City: {schoolObj.city}</p>
                 <p>Degree: {schoolObj.degree}</p>

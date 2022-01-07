@@ -61,7 +61,7 @@ class EducationForm extends Component {
         </div>
         <div className="button-container">
           <input type="submit" value="Submit"></input>
-          <button type="button" onClick={this.resetEditState}>
+          <button type="button" onClick={this.props.onEditStateReset}>
             Cancel
           </button>
         </div>

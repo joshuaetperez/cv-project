@@ -93,11 +93,13 @@ class WorkExperience extends Component {
       return <div>WorkExperience Preview</div>;
     } else if (sectionStatus === 'submitted') {
       return (
-        <div>
-          <h3>Work Experience</h3>
+        <div className="section">
+          <div className="section-header">
+            <h3>Work Experience</h3>
+          </div>
           {this.state.companyArr.map((companyObj) => {
             return (
-              <div key={companyObj.id}>
+              <div className="info-container" key={companyObj.id}>
                 <div className="edit-delete-container">
                   <button
                     className="edit-button"
@@ -149,12 +151,14 @@ class WorkExperience extends Component {
       );
     } else if (sectionStatus === 'edit') {
       return (
-        <div>
-          <h3>Work Experience</h3>
+        <div className="section">
+          <div className="section-header">
+            <h3>Work Experience</h3>
+          </div>
           {this.state.companyArr.map((companyObj) => {
             if (companyObj.id === this.state.editState.id) {
               return (
-                <div key={companyObj.id}>
+                <div className="info-container" key={companyObj.id}>
                   <WorkExperienceForm
                     companyArr={this.state.companyArr}
                     editState={this.state.editState}
@@ -166,7 +170,7 @@ class WorkExperience extends Component {
               );
             } else {
               return (
-                <div key={companyObj.id}>
+                <div className="info-container" key={companyObj.id}>
                   <p>Company: {companyObj.company}</p>
                   <p>City: {companyObj.city}</p>
                   <p>Position: {companyObj.position}</p>
@@ -182,12 +186,14 @@ class WorkExperience extends Component {
     } else {
       // Add Mode
       return (
-        <div>
-          <h3>Work Experience</h3>
+        <div className="section">
+          <div className="section-header">
+            <h3>Work Experience</h3>
+          </div>
           {this.state.companyArr.map((companyObj) => {
             return (
-              <div key={companyObj.id}>
-                <p>School: {companyObj.school}</p>
+              <div className="info-container" key={companyObj.id}>
+                <p>Company: {companyObj.company}</p>
                 <p>City: {companyObj.city}</p>
                 <p>Degree: {companyObj.degree}</p>
                 <p>From: {companyObj.from}</p>
