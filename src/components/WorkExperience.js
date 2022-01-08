@@ -130,16 +130,33 @@ class WorkExperience extends Component {
                     <DeleteIcon fontSize="small" />
                   </button>
                 </div>
-                <p>Company: {companyObj.company}</p>
-                <p>City: {companyObj.city}</p>
-                <p>Position: {companyObj.position}</p>
-                <p>From: {companyObj.from}</p>
-                <p>To: {companyObj.to}</p>
-                <p>Details: {companyObj.details}</p>
+                <div className="text-container">
+                  <div className="text-field-container">Company: </div>
+                  <div className="text-div">{companyObj.company}</div>
+                </div>
+                <div className="text-container">
+                  <div className="text-field-container">City: </div>
+                  <div className="text-div">{companyObj.city}</div>
+                </div>
+                <div className="text-container">
+                  <div className="text-field-container">Position: </div>
+                  <div className="text-div">{companyObj.position}</div>
+                </div>
+                <div className="text-container">
+                  <div className="text-field-container">From: </div>
+                  <div className="text-div">
+                    {companyObj.from} - {companyObj.to}
+                  </div>
+                </div>
+                <div className="text-container">
+                  <div className="text-field-container">Details: </div>
+                  <div className="text-div">{companyObj.details}</div>
+                </div>
               </div>
             );
           })}
           <button
+            className="add-button"
             onClick={(e) => {
               this.setState({editState: this.initEditState()});
               this.props.onSectionStatusChange('WorkExperience', 'add');
@@ -171,12 +188,28 @@ class WorkExperience extends Component {
             } else {
               return (
                 <div className="info-container" key={companyObj.id}>
-                  <p>Company: {companyObj.company}</p>
-                  <p>City: {companyObj.city}</p>
-                  <p>Position: {companyObj.position}</p>
-                  <p>From: {companyObj.from}</p>
-                  <p>To: {companyObj.to}</p>
-                  <p>Details: {companyObj.details}</p>
+                  <div className="text-container">
+                    <div className="text-field-container">Company: </div>
+                    <div className="text-div">{companyObj.company}</div>
+                  </div>
+                  <div className="text-container">
+                    <div className="text-field-container">City: </div>
+                    <div className="text-div">{companyObj.city}</div>
+                  </div>
+                  <div className="text-container">
+                    <div className="text-field-container">Position: </div>
+                    <div className="text-div">{companyObj.position}</div>
+                  </div>
+                  <div className="text-container">
+                    <div className="text-field-container">From: </div>
+                    <div className="text-div">
+                      {companyObj.from} - {companyObj.to}
+                    </div>
+                  </div>
+                  <div className="text-container">
+                    <div className="text-field-container">Details: </div>
+                    <div className="text-div">{companyObj.details}</div>
+                  </div>
                 </div>
               );
             }
@@ -193,12 +226,28 @@ class WorkExperience extends Component {
           {this.state.companyArr.map((companyObj) => {
             return (
               <div className="info-container" key={companyObj.id}>
-                <p>Company: {companyObj.company}</p>
-                <p>City: {companyObj.city}</p>
-                <p>Degree: {companyObj.degree}</p>
-                <p>From: {companyObj.from}</p>
-                <p>To: {companyObj.to}</p>
-                <p>Details: {companyObj.details}</p>
+                <div className="text-container">
+                  <div className="text-field-container">Company: </div>
+                  <div className="text-div">{companyObj.company}</div>
+                </div>
+                <div className="text-container">
+                  <div className="text-field-container">City: </div>
+                  <div className="text-div">{companyObj.city}</div>
+                </div>
+                <div className="text-container">
+                  <div className="text-field-container">Position: </div>
+                  <div className="text-div">{companyObj.position}</div>
+                </div>
+                <div className="text-container">
+                  <div className="text-field-container">From: </div>
+                  <div className="text-div">
+                    {companyObj.from} - {companyObj.to}
+                  </div>
+                </div>
+                <div className="text-container">
+                  <div className="text-field-container">Details: </div>
+                  <div className="text-div">{companyObj.details}</div>
+                </div>
               </div>
             );
           })}

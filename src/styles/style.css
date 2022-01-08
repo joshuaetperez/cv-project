@@ -43,29 +43,27 @@ ul {
 }
 
 .section {
-  margin: 5px 0;
+  margin-bottom: 10px;
 }
 
 .info-container {
-  margin-bottom: 16px;
+  margin-bottom: 10px;
 }
 
-.input-container {
+.input-container,
+.text-container {
   display: flex;
-  justify-content: space-between;
-  width: 300px;
 }
 
-.from-to-container {
-  display: flex;
-  justify-content: space-between;
-  width: 484px;
+.label-container,
+.text-field-container {
+  width: 130px;
 }
 
-.details-container {
-  display: flex;
-  justify-content: space-between;
-  width: 515px;
+.text-div {
+  overflow: auto;
+  word-break: break-all;
+  width: 430px;
 }
 
 .section-header {
@@ -85,6 +83,10 @@ ul {
   justify-content: center;
   margin: 10px 0;
   gap: 7px;
+}
+
+.add-button {
+  margin-top: 3px;
 }
 
 .edit-button,
@@ -132,8 +134,3 @@ ul {
 #work-experience-field-empty-error {
   color: #ff0000;
 }
-
-/* #work-experience-details {
-  height: 30px;
-  width: 355px;
-} */

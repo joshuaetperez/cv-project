@@ -7,7 +7,9 @@ class EducationForm extends Component {
     return (
       <form onSubmit={this.props.onFormSubmit}>
         <div className="input-container">
-          <label htmlFor="education-school">School: </label>
+          <div className="label-container">
+            <label htmlFor="education-school">School: </label>
+          </div>
           <input
             type="text"
             id="education-school"
@@ -17,7 +19,9 @@ class EducationForm extends Component {
           ></input>
         </div>
         <div className="input-container">
-          <label htmlFor="education-city">City: </label>
+          <div className="label-container">
+            <label htmlFor="education-city">City: </label>
+          </div>
           <input
             type="text"
             id="education-city"
@@ -27,7 +31,9 @@ class EducationForm extends Component {
           ></input>
         </div>
         <div className="input-container">
-          <label htmlFor="education-degree">Degree: </label>
+          <div className="label-container">
+            <label htmlFor="education-degree">Degree: </label>
+          </div>
           <input
             type="text"
             id="education-degree"
@@ -36,8 +42,8 @@ class EducationForm extends Component {
             onChange={this.props.onInputChange}
           ></input>
         </div>
-        <div className="from-to-container">
-          <div>
+        <div className="input-container">
+          <div className="label-container">
             <label htmlFor="education-from">From - </label>
             <label htmlFor="education-to">To: </label>
           </div>

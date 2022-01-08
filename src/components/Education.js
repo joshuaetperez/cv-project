@@ -116,15 +116,29 @@ class Education extends Component {
                     <DeleteIcon fontSize="small" />
                   </button>
                 </div>
-                <p>School: {schoolObj.school}</p>
-                <p>City: {schoolObj.city}</p>
-                <p>Degree: {schoolObj.degree}</p>
-                <p>From: {schoolObj.from}</p>
-                <p>To: {schoolObj.to}</p>
+                <div className="text-container">
+                  <div className="text-field-container">School: </div>
+                  <div className="text-div">{schoolObj.school}</div>
+                </div>
+                <div className="text-container">
+                  <div className="text-field-container">City: </div>
+                  <div className="text-div">{schoolObj.city}</div>
+                </div>
+                <div className="text-container">
+                  <div className="text-field-container">Degree: </div>
+                  <div className="text-div">{schoolObj.degree}</div>
+                </div>
+                <div className="text-container">
+                  <div className="text-field-container">From: </div>
+                  <div className="text-div">
+                    {schoolObj.from} - {schoolObj.to}
+                  </div>
+                </div>
               </div>
             );
           })}
           <button
+            className="add-button"
             onClick={(e) => {
               this.setState({editState: this.initEditState()});
               this.props.onSectionStatusChange('Education', 'add');
@@ -156,11 +170,24 @@ class Education extends Component {
             } else {
               return (
                 <div className="info-container" key={schoolObj.id}>
-                  <p>School: {schoolObj.school}</p>
-                  <p>City: {schoolObj.city}</p>
-                  <p>Degree: {schoolObj.degree}</p>
-                  <p>From: {schoolObj.from}</p>
-                  <p>To: {schoolObj.to}</p>
+                  <div className="text-container">
+                    <div className="text-field-container">School: </div>
+                    <div className="text-div">{schoolObj.school}</div>
+                  </div>
+                  <div className="text-container">
+                    <div className="text-field-container">City: </div>
+                    <div className="text-div">{schoolObj.city}</div>
+                  </div>
+                  <div className="text-container">
+                    <div className="text-field-container">Degree: </div>
+                    <div className="text-div">{schoolObj.degree}</div>
+                  </div>
+                  <div className="text-container">
+                    <div className="text-field-container">From: </div>
+                    <div className="text-div">
+                      {schoolObj.from} - {schoolObj.to}
+                    </div>
+                  </div>
                 </div>
               );
             }
@@ -177,11 +204,24 @@ class Education extends Component {
           {this.state.schoolArr.map((schoolObj) => {
             return (
               <div className="info-container" key={schoolObj.id}>
-                <p>School: {schoolObj.school}</p>
-                <p>City: {schoolObj.city}</p>
-                <p>Degree: {schoolObj.degree}</p>
-                <p>From: {schoolObj.from}</p>
-                <p>To: {schoolObj.to}</p>
+                <div className="text-container">
+                  <div className="text-field-container">School: </div>
+                  <div className="text-div">{schoolObj.school}</div>
+                </div>
+                <div className="text-container">
+                  <div className="text-field-container">City: </div>
+                  <div className="text-div">{schoolObj.city}</div>
+                </div>
+                <div className="text-container">
+                  <div className="text-field-container">Degree: </div>
+                  <div className="text-div">{schoolObj.degree}</div>
+                </div>
+                <div className="text-container">
+                  <div className="text-field-container">From: </div>
+                  <div className="text-div">
+                    {schoolObj.from} - {schoolObj.to}
+                  </div>
+                </div>
               </div>
             );
           })}

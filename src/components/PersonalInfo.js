@@ -60,10 +60,19 @@ class PersonalInfo extends Component {
               <EditOutlinedIcon fontSize="small" />
             </button>
           </div>
-          <div className="info-container">
-            <p>Name: {previousState.name}</p>
-            <p>Email: {previousState.email}</p>
-            <p>Phone Number: {previousState.phoneNum}</p>
+          <div className="personal-info-container">
+            <div className="text-container">
+              <div className="text-field-container">Name: </div>
+              <div className="text-div">{previousState.name}</div>
+            </div>
+            <div className="text-container">
+              <div className="text-field-container">Email: </div>
+              <div className="text-div">{previousState.email}</div>
+            </div>
+            <div className="text-container">
+              <div className="text-field-container">Phone Number: </div>
+              <div className="text-div">{previousState.phoneNum}</div>
+            </div>
           </div>
         </div>
       );
@@ -77,7 +86,9 @@ class PersonalInfo extends Component {
         </div>
         <form onSubmit={this.handleSubmit}>
           <div className="input-container">
-            <label htmlFor="personal-info-name">Name: </label>
+            <div className="label-container">
+              <label htmlFor="personal-info-name">Name: </label>
+            </div>
             <input
               type="text"
               id="personal-info-name"
@@ -87,7 +98,9 @@ class PersonalInfo extends Component {
             ></input>
           </div>
           <div className="input-container">
-            <label htmlFor="personal-info-email">Email: </label>
+            <div className="label-container">
+              <label htmlFor="personal-info-email">Email: </label>
+            </div>
             <input
               type="text"
               id="personal-info-email"
@@ -97,7 +110,9 @@ class PersonalInfo extends Component {
             ></input>
           </div>
           <div className="input-container">
-            <label htmlFor="personal-info-phone-num">Phone Number: </label>
+            <div className="label-container">
+              <label htmlFor="personal-info-phone-num">Phone Number: </label>
+            </div>
             <input
               type="text"
               id="personal-info-phone-num"

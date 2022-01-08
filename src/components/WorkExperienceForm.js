@@ -7,7 +7,9 @@ class WorkExperienceForm extends Component {
     return (
       <form onSubmit={this.props.onFormSubmit}>
         <div className="input-container">
-          <label htmlFor="work-experience-company">Company: </label>
+          <div className="label-container">
+            <label htmlFor="work-experience-company">Company: </label>
+          </div>
           <input
             type="text"
             id="work-experience-company"
@@ -17,7 +19,9 @@ class WorkExperienceForm extends Component {
           ></input>
         </div>
         <div className="input-container">
-          <label htmlFor="work-experience-city">City: </label>
+          <div className="label-container">
+            <label htmlFor="work-experience-city">City: </label>
+          </div>
           <input
             type="text"
             id="work-experience-city"
@@ -27,7 +31,9 @@ class WorkExperienceForm extends Component {
           ></input>
         </div>
         <div className="input-container">
-          <label htmlFor="work-experience-position">Position: </label>
+          <div className="label-container">
+            <label htmlFor="work-experience-position">Position: </label>
+          </div>
           <input
             type="text"
             id="work-experience-position"
@@ -36,8 +42,8 @@ class WorkExperienceForm extends Component {
             onChange={this.props.onInputChange}
           ></input>
         </div>
-        <div className="from-to-container">
-          <div>
+        <div className="input-container">
+          <div className="label-container">
             <label htmlFor="work-experience-from">From - </label>
             <label htmlFor="work-experience-to">To: </label>
           </div>
@@ -59,8 +65,10 @@ class WorkExperienceForm extends Component {
             ></input>
           </div>
         </div>
-        <div className="details-container">
-          <label htmlFor="work-experience-details">Details: </label>
+        <div className="input-container">
+          <div className="label-container">
+            <label htmlFor="work-experience-details">Details: </label>
+          </div>
           <textarea
             id="work-experience-details"
             name="details"
