@@ -3,6 +3,7 @@ import EditOutlinedIcon from '@mui/icons-material/EditOutlined';
 import DeleteIcon from '@mui/icons-material/Delete';
 import uniqid from 'uniqid';
 import WorkExperienceForm from './WorkExperienceForm';
+import WorkExperienceText from './WorkExperienceText';
 import '../styles/style.css';
 
 class WorkExperience extends Component {
@@ -99,7 +100,7 @@ class WorkExperience extends Component {
           </div>
           {this.state.companyArr.map((companyObj) => {
             return (
-              <div className="info-container" key={companyObj.id}>
+              <div className="entry-container" key={companyObj.id}>
                 <div className="edit-delete-container">
                   <button
                     className="edit-button"
@@ -130,28 +131,7 @@ class WorkExperience extends Component {
                     <DeleteIcon fontSize="small" />
                   </button>
                 </div>
-                <div className="text-container">
-                  <div className="text-field-container">Company: </div>
-                  <div className="text-div">{companyObj.company}</div>
-                </div>
-                <div className="text-container">
-                  <div className="text-field-container">City: </div>
-                  <div className="text-div">{companyObj.city}</div>
-                </div>
-                <div className="text-container">
-                  <div className="text-field-container">Position: </div>
-                  <div className="text-div">{companyObj.position}</div>
-                </div>
-                <div className="text-container">
-                  <div className="text-field-container">From: </div>
-                  <div className="text-div">
-                    {companyObj.from} - {companyObj.to}
-                  </div>
-                </div>
-                <div className="text-container">
-                  <div className="text-field-container">Details: </div>
-                  <div className="text-div">{companyObj.details}</div>
-                </div>
+                <WorkExperienceText companyObj={companyObj} />
               </div>
             );
           })}
@@ -175,7 +155,7 @@ class WorkExperience extends Component {
           {this.state.companyArr.map((companyObj) => {
             if (companyObj.id === this.state.editState.id) {
               return (
-                <div className="info-container" key={companyObj.id}>
+                <div className="entry-container" key={companyObj.id}>
                   <WorkExperienceForm
                     companyArr={this.state.companyArr}
                     editState={this.state.editState}
@@ -187,30 +167,10 @@ class WorkExperience extends Component {
               );
             } else {
               return (
-                <div className="info-container" key={companyObj.id}>
-                  <div className="text-container">
-                    <div className="text-field-container">Company: </div>
-                    <div className="text-div">{companyObj.company}</div>
-                  </div>
-                  <div className="text-container">
-                    <div className="text-field-container">City: </div>
-                    <div className="text-div">{companyObj.city}</div>
-                  </div>
-                  <div className="text-container">
-                    <div className="text-field-container">Position: </div>
-                    <div className="text-div">{companyObj.position}</div>
-                  </div>
-                  <div className="text-container">
-                    <div className="text-field-container">From: </div>
-                    <div className="text-div">
-                      {companyObj.from} - {companyObj.to}
-                    </div>
-                  </div>
-                  <div className="text-container">
-                    <div className="text-field-container">Details: </div>
-                    <div className="text-div">{companyObj.details}</div>
-                  </div>
-                </div>
+                <WorkExperienceText
+                  companyObj={companyObj}
+                  key={companyObj.id}
+                />
               );
             }
           })}
@@ -225,30 +185,7 @@ class WorkExperience extends Component {
           </div>
           {this.state.companyArr.map((companyObj) => {
             return (
-              <div className="info-container" key={companyObj.id}>
-                <div className="text-container">
-                  <div className="text-field-container">Company: </div>
-                  <div className="text-div">{companyObj.company}</div>
-                </div>
-                <div className="text-container">
-                  <div className="text-field-container">City: </div>
-                  <div className="text-div">{companyObj.city}</div>
-                </div>
-                <div className="text-container">
-                  <div className="text-field-container">Position: </div>
-                  <div className="text-div">{companyObj.position}</div>
-                </div>
-                <div className="text-container">
-                  <div className="text-field-container">From: </div>
-                  <div className="text-div">
-                    {companyObj.from} - {companyObj.to}
-                  </div>
-                </div>
-                <div className="text-container">
-                  <div className="text-field-container">Details: </div>
-                  <div className="text-div">{companyObj.details}</div>
-                </div>
-              </div>
+              <WorkExperienceText companyObj={companyObj} key={companyObj.id} />
             );
           })}
           <WorkExperienceForm

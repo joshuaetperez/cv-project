@@ -3,6 +3,7 @@ import EditOutlinedIcon from '@mui/icons-material/EditOutlined';
 import DeleteIcon from '@mui/icons-material/Delete';
 import uniqid from 'uniqid';
 import EducationForm from './EducationForm';
+import EducationText from './EducationText';
 import '../styles/style.css';
 
 class Education extends Component {
@@ -88,7 +89,7 @@ class Education extends Component {
           </div>
           {this.state.schoolArr.map((schoolObj) => {
             return (
-              <div className="info-container" key={schoolObj.id}>
+              <div className="entry-container" key={schoolObj.id}>
                 <div className="edit-delete-container">
                   <button
                     className="edit-button"
@@ -116,24 +117,7 @@ class Education extends Component {
                     <DeleteIcon fontSize="small" />
                   </button>
                 </div>
-                <div className="text-container">
-                  <div className="text-field-container">School: </div>
-                  <div className="text-div">{schoolObj.school}</div>
-                </div>
-                <div className="text-container">
-                  <div className="text-field-container">City: </div>
-                  <div className="text-div">{schoolObj.city}</div>
-                </div>
-                <div className="text-container">
-                  <div className="text-field-container">Degree: </div>
-                  <div className="text-div">{schoolObj.degree}</div>
-                </div>
-                <div className="text-container">
-                  <div className="text-field-container">From: </div>
-                  <div className="text-div">
-                    {schoolObj.from} - {schoolObj.to}
-                  </div>
-                </div>
+                <EducationText schoolObj={schoolObj} />
               </div>
             );
           })}
@@ -157,7 +141,7 @@ class Education extends Component {
           {this.state.schoolArr.map((schoolObj) => {
             if (schoolObj.id === this.state.editState.id) {
               return (
-                <div className="info-container" key={schoolObj.id}>
+                <div className="entry-container" key={schoolObj.id}>
                   <EducationForm
                     schoolArr={this.state.schoolArr}
                     editState={this.state.editState}
@@ -168,28 +152,7 @@ class Education extends Component {
                 </div>
               );
             } else {
-              return (
-                <div className="info-container" key={schoolObj.id}>
-                  <div className="text-container">
-                    <div className="text-field-container">School: </div>
-                    <div className="text-div">{schoolObj.school}</div>
-                  </div>
-                  <div className="text-container">
-                    <div className="text-field-container">City: </div>
-                    <div className="text-div">{schoolObj.city}</div>
-                  </div>
-                  <div className="text-container">
-                    <div className="text-field-container">Degree: </div>
-                    <div className="text-div">{schoolObj.degree}</div>
-                  </div>
-                  <div className="text-container">
-                    <div className="text-field-container">From: </div>
-                    <div className="text-div">
-                      {schoolObj.from} - {schoolObj.to}
-                    </div>
-                  </div>
-                </div>
-              );
+              return <EducationText schoolObj={schoolObj} key={schoolObj.id} />;
             }
           })}
         </div>
@@ -202,28 +165,7 @@ class Education extends Component {
             <h3>Education</h3>
           </div>
           {this.state.schoolArr.map((schoolObj) => {
-            return (
-              <div className="info-container" key={schoolObj.id}>
-                <div className="text-container">
-                  <div className="text-field-container">School: </div>
-                  <div className="text-div">{schoolObj.school}</div>
-                </div>
-                <div className="text-container">
-                  <div className="text-field-container">City: </div>
-                  <div className="text-div">{schoolObj.city}</div>
-                </div>
-                <div className="text-container">
-                  <div className="text-field-container">Degree: </div>
-                  <div className="text-div">{schoolObj.degree}</div>
-                </div>
-                <div className="text-container">
-                  <div className="text-field-container">From: </div>
-                  <div className="text-div">
-                    {schoolObj.from} - {schoolObj.to}
-                  </div>
-                </div>
-              </div>
-            );
+            return <EducationText schoolObj={schoolObj} key={schoolObj.id} />;
           })}
           <EducationForm
             schoolArr={this.state.schoolArr}
