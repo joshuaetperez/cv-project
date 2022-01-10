@@ -123,9 +123,11 @@ class PersonalInfo extends Component {
           </div>
           <div className="button-container">
             <input type="submit" value="Submit"></input>
-            <button type="button" onClick={this.resetEditState}>
-              Cancel
-            </button>
+            <input
+              type="button"
+              value="Cancel"
+              onClick={this.resetEditState}
+            ></input>
           </div>
           <div id="personal-info-field-empty-error"></div>
         </form>
