@@ -80,7 +80,36 @@ class Education extends Component {
   render() {
     const sectionStatus = this.props.sectionStatus;
     if (sectionStatus === 'preview') {
-      return <div>Education Preview</div>;
+      return (
+        <div className="preview-education">
+          <div
+            className="preview-section-header"
+            onClick={this.props.changeToEditMode}
+          >
+            <h3>Education</h3>
+          </div>
+          {this.state.schoolArr.map((schoolObj) => {
+            return (
+              <div
+                className="preview-entry-container"
+                key={schoolObj.id}
+                onClick={(e) => {
+                  this.setState({editState: schoolObj});
+                  this.props.changeToEditEntry('Education');
+                }}
+              >
+                <div className="preview-date">
+                  {schoolObj.from} - {schoolObj.to}
+                </div>
+                <div className="preview-info-container">
+                  <div className="preview-school">{schoolObj.school}</div>
+                  <div className="preview-degree">{schoolObj.degree}</div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      );
     } else if (sectionStatus === 'submitted') {
       return (
         <div className="section">

@@ -134,3 +134,31 @@ ul {
 #work-experience-field-empty-error {
   color: #ff0000;
 }
+
+.preview-personal-info,
+.preview-entry-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.preview-email-phone-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.preview-info-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.preview-personal-info:hover,
+.preview-section-header:hover {
+  background-color: rgb(179, 179, 179, 0.8);
+  cursor: pointer;
+}
+
+.preview-entry-container:hover {
+  background-color: rgb(179, 179, 179, 0.8);
+  cursor: pointer;
+}

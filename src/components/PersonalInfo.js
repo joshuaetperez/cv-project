@@ -45,7 +45,18 @@ class PersonalInfo extends Component {
     const sectionStatus = this.props.sectionStatus;
     const previousState = this.state.previousState;
     if (sectionStatus === 'preview') {
-      return <div>PersonalInfo Preview</div>;
+      return (
+        <div
+          className="preview-personal-info"
+          onClick={this.props.editPersonalInfo}
+        >
+          <div className="preview-name">{previousState.name}</div>
+          <div className="preview-email-phone-container">
+            <div className="preview-email">{previousState.email}</div>
+            <div className="preview-phone">{previousState.phoneNum}</div>
+          </div>
+        </div>
+      );
     } else if (sectionStatus === 'submitted') {
       return (
         <div className="section">

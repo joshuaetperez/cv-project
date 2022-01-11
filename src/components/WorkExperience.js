@@ -91,7 +91,37 @@ class WorkExperience extends Component {
   render() {
     const sectionStatus = this.props.sectionStatus;
     if (sectionStatus === 'preview') {
-      return <div>WorkExperience Preview</div>;
+      return (
+        <div className="preview-work-experience">
+          <div
+            className="preview-section-header"
+            onClick={this.props.changeToEditMode}
+          >
+            <h3>Work Experience</h3>
+          </div>
+          {this.state.companyArr.map((companyObj) => {
+            return (
+              <div
+                className="preview-entry-container"
+                key={companyObj.id}
+                onClick={(e) => {
+                  this.setState({editState: companyObj});
+                  this.props.changeToEditEntry('WorkExperience');
+                }}
+              >
+                <div className="preview-date">
+                  {companyObj.from} - {companyObj.to}
+                </div>
+                <div className="preview-info-container">
+                  <div className="preview-company">{companyObj.company}</div>
+                  <div className="preview-position">{companyObj.position}</div>
+                  <div className="preview-details">{companyObj.details}</div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      );
     } else if (sectionStatus === 'submitted') {
       return (
         <div className="section">
