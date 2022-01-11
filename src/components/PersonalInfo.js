@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import EditOutlinedIcon from '@mui/icons-material/EditOutlined';
+import EmailIcon from '@mui/icons-material/Email';
+import PhoneIcon from '@mui/icons-material/Phone';
 import '../styles/style.css';
 
 class PersonalInfo extends Component {
@@ -52,8 +54,12 @@ class PersonalInfo extends Component {
         >
           <div className="preview-name">{previousState.name}</div>
           <div className="preview-email-phone-container">
-            <div className="preview-email">{previousState.email}</div>
-            <div className="preview-phone">{previousState.phoneNum}</div>
+            <div className="preview-email">
+              <EmailIcon fontSize="small" /> {previousState.email}
+            </div>
+            <div className="preview-phone">
+              <PhoneIcon fontSize="small" /> {previousState.phoneNum}
+            </div>
           </div>
         </div>
       );

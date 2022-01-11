@@ -28,26 +28,19 @@ ul {
   justify-content: center;
 }
 
-.page-flex-container {
-  border: 1px #ff0000 solid;
-  width: 800px;
-  display: flex;
-  justify-content: center;
-}
-
 .page {
-  width: 600px;
-  padding: 10px 20px;
+  width: 40%;
+  padding: 0.625em 1.25em;
   background-color: #fff;
   border: 1px black solid;
 }
 
 .section {
-  margin-bottom: 10px;
+  margin-bottom: 0.625em;
 }
 
 .info-container {
-  margin-bottom: 10px;
+  margin-bottom: 0.625em;
 }
 
 .input-container,
@@ -57,36 +50,36 @@ ul {
 
 .label-container,
 .text-field-container {
-  width: 130px;
+  width: 8.125em;
 }
 
 .text-div {
   overflow: auto;
   word-break: break-all;
-  width: 430px;
+  width: 26.875em;
 }
 
 .section-header {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 0.25em;
 }
 
 .edit-delete-container {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 0.75em;
 }
 
 .button-container {
   display: flex;
   justify-content: center;
-  margin: 10px 0;
-  gap: 7px;
+  margin: 0.625em 0;
+  gap: 0.4375em;
 }
 
 .add-button {
-  margin-top: 3px;
+  margin-top: 0.1875em;
 }
 
 .edit-button,
@@ -94,7 +87,7 @@ ul {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #fff;
+  background-color: transparent;
   height: 20px;
   width: 20px;
   border: none;
@@ -106,20 +99,16 @@ ul {
   transform: scale(1.2, 1.2);
 }
 
-.edit-button {
+.edit-button,
+.delete-button {
   color: #008000;
 }
 
-.delete-button {
-  color: #808080;
-}
-
 .preview-button {
-  width: 180px;
-  height: 32px;
-  font-size: 18px;
   background-color: #4caf50;
   color: #fff;
+  font-size: 1.125rem;
+  padding: 0.5em 3em;
   border: 1px yellow solid;
   border-radius: 4px;
   cursor: pointer;
@@ -141,23 +130,42 @@ ul {
   justify-content: space-between;
 }
 
+.preview-personal-info,
+.preview-education,
+.preview-work-experience,
+.preview-entry-container {
+  margin-bottom: 0.625em;
+}
+
 .preview-email-phone-container {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
 }
 
+.preview-email,
+.preview-phone {
+  display: flex;
+  align-items: center;
+  gap: 0.1875em;
+}
+
+.preview-date {
+  overflow: auto;
+  word-break: break-all;
+  width: 8.125em;
+}
+
 .preview-info-container {
   display: flex;
   flex-direction: column;
+  overflow: auto;
+  word-break: break-all;
+  width: 26.875em;
 }
 
 .preview-personal-info:hover,
-.preview-section-header:hover {
-  background-color: rgb(179, 179, 179, 0.8);
-  cursor: pointer;
-}
-
+.preview-section-header:hover,
 .preview-entry-container:hover {
   background-color: rgb(179, 179, 179, 0.8);
   cursor: pointer;
