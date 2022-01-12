@@ -1,8 +1,8 @@
 # About the Project
 
-This project is a CV maker build with the React framework.
+This project is a CV maker built with the React framework.
 
-Users can input their personal information (name, email, and phone number), their education, and work experience. They can add, delete, and edit their entries with ease via the "Add" buttons and the "Edit" (pencil) and "Delete" (trash can) icons. Click on the "Submit" to save the form information. If you do not want to save the current form information and want to revert back, click on the "Cancel" button.
+Users can input their personal information (name, email, and phone number), their education, and work experience. They can add, delete, and edit their entries with ease via the "Add" buttons and the "Edit" (pencil) and "Delete" (trash can) icons. Click on the "Submit" button to save the form information. If you do not wish to save the current form information and want to revert back, click on the "Cancel" button.
 
 At any time on the edit page, the user can click the "Preview" button to see a CV page with their included information. However, any unsaved form changes/additions will be lost, so make sure to press the "Submit" button for any desired entries.
 
