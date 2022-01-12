@@ -83,7 +83,9 @@ class App extends Component {
 
   render() {
     return (
-      <div className="page">
+      <div
+        className={this.checkIfInPreviewMode() ? 'preview-page' : 'edit-page'}
+      >
         <PersonalInfo
           sectionStatus={this.state.sectionStatus.PersonalInfo}
           onSectionStatusChange={this.handleSectionStatus}

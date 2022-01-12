@@ -14,6 +14,11 @@ body {
   font-size: 1.25rem;
 }
 
+#root {
+  display: flex;
+  justify-content: center;
+}
+
 p,
 h3 {
   margin: 0;
@@ -35,17 +40,14 @@ textarea {
   font-size: 1.25rem;
 }
 
-#root {
-  display: flex;
-  justify-content: center;
+.edit-page,
+.preview-page {
+  padding: 0.625rem 1.25rem;
+  background-color: #fff;
 }
 
-.page {
-  width: 40%;
-  padding: 0.625rem 1.25rem;
-  margin: 0.625rem 0;
-  background-color: #fff;
-  border: 1px black solid;
+.preview-page {
+  min-height: 55rem;
 }
 
 .section {
@@ -193,8 +195,8 @@ textarea {
 }
 
 .preview-date,
-.preview-school,
-.preview-company {
+.preview-school-city,
+.preview-company-city {
   font-weight: bold;
 }
 
@@ -203,4 +205,111 @@ textarea {
 .preview-entry-container:hover {
   background-color: rgb(179, 179, 179, 0.8);
   cursor: pointer;
+}
+
+@media only screen and (max-width: 505px) {
+  body {
+    background-color: #fff;
+  }
+
+  .edit-page,
+  .preview-page {
+    width: 100%;
+    margin: 0;
+    border: none;
+    padding-bottom: 0;
+  }
+
+  .label-container,
+  .text-field-container {
+    width: 35%;
+  }
+
+  .text-div {
+    width: 65%;
+  }
+
+  .to-from-input-container input[type='text'] {
+    width: 4.5rem;
+  }
+
+  .preview-email-phone-container {
+    font-size: 1rem;
+  }
+
+  .preview-date {
+    width: 40%;
+  }
+
+  .preview-info-container {
+    width: 60%;
+  }
+
+  input[type='text'] {
+    width: 10rem;
+  }
+}
+
+@media only screen and (min-width: 506px) {
+  body {
+    background-color: #fff;
+  }
+
+  .edit-page,
+  .preview-page {
+    width: 100%;
+    margin: 0;
+    border: none;
+  }
+
+  input[type='text'] {
+    width: 10rem;
+  }
+}
+
+@media only screen and (min-width: 650px) {
+  input[type='text'] {
+    width: 13.3rem;
+  }
+}
+
+@media only screen and (min-width: 950px) {
+  body {
+    background-color: #e5e5e5;
+  }
+
+  .edit-page,
+  .preview-page {
+    width: 80%;
+    margin: 0.625rem 0;
+    border: 1px black solid;
+  }
+}
+
+@media only screen and (min-width: 1100px) {
+  .edit-page,
+  .preview-page {
+    width: 70%;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .page,
+  .preview-page {
+    width: 60%;
+  }
+}
+
+@media only screen and (min-width: 1500px) {
+  .edit-page,
+  .preview-page {
+    width: 50%;
+  }
+}
+
+@media only screen and (min-width: 1800px) {
+  .edit-page,
+  .preview-page {
+    width: 40%;
+  }
 }

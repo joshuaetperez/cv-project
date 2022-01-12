@@ -102,7 +102,9 @@ class Education extends Component {
                   {schoolObj.from} - {schoolObj.to}
                 </div>
                 <div className="preview-info-container">
-                  <div className="preview-school">{schoolObj.school}</div>
+                  <div className="preview-school-city">
+                    {schoolObj.school}, {schoolObj.city}
+                  </div>
                   <div className="preview-degree">{schoolObj.degree}</div>
                 </div>
               </div>

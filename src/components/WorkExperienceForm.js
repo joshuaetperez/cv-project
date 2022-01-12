@@ -47,7 +47,7 @@ class WorkExperienceForm extends Component {
             <label htmlFor="work-experience-from">From - </label>
             <label htmlFor="work-experience-to">To: </label>
           </div>
-          <div>
+          <div className="to-from-input-container">
             <input
               type="text"
               id="work-experience-from"

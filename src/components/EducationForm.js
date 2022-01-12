@@ -47,7 +47,7 @@ class EducationForm extends Component {
             <label htmlFor="education-from">From - </label>
             <label htmlFor="education-to">To: </label>
           </div>
-          <div>
+          <div className="to-from-input-container">
             <input
               type="text"
               id="education-from"

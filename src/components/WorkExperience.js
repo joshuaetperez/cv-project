@@ -113,7 +113,9 @@ class WorkExperience extends Component {
                   {companyObj.from} - {companyObj.to}
                 </div>
                 <div className="preview-info-container">
-                  <div className="preview-company">{companyObj.company}</div>
+                  <div className="preview-company-city">
+                    {companyObj.company}, {companyObj.city}
+                  </div>
                   <div className="preview-position">{companyObj.position}</div>
                   <div className="preview-details">{companyObj.details}</div>
                 </div>
