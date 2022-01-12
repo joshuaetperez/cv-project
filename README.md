@@ -1,3 +1,15 @@
+# About the Project
+
+This project is a CV maker build with the React framework.
+
+Users can input their personal information (name, email, and phone number), their education, and work experience. They can add, delete, and edit their entries with ease via the "Add" buttons and the "Edit" (pencil) and "Delete" (trash can) icons. Click on the "Submit" to save the form information. If you do not want to save the current form information and want to revert back, click on the "Cancel" button.
+
+At any time on the edit page, the user can click the "Preview" button to see a CV page with their included information. However, any unsaved form changes/additions will be lost, so make sure to press the "Submit" button for any desired entries.
+
+On the preview page, if the user wants to go back and make changes, they can click on any of the sections (the personal info section, the "Education" and "Work Experience" headers, and the school/company entries) on the page to edit the corresponding section.
+
+This app does not collect or store personal information anywhere. If the user refreshes the page, all of the information they have included will be removed.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
