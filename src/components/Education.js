@@ -127,7 +127,7 @@ class Education extends Component {
                       this.props.onSectionStatusChange('Education', 'edit');
                     }}
                   >
-                    <EditOutlinedIcon fontSize="small" />
+                    <EditOutlinedIcon />
                   </button>
                   <button
                     className="delete-button"
@@ -143,7 +143,7 @@ class Education extends Component {
                       });
                     }}
                   >
-                    <DeleteIcon fontSize="small" />
+                    <DeleteIcon />
                   </button>
                 </div>
                 <EducationText schoolObj={schoolObj} />

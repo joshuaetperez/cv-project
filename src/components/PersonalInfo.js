@@ -55,10 +55,10 @@ class PersonalInfo extends Component {
           <div className="preview-name">{previousState.name}</div>
           <div className="preview-email-phone-container">
             <div className="preview-email">
-              <EmailIcon fontSize="small" /> {previousState.email}
+              <EmailIcon /> {previousState.email}
             </div>
             <div className="preview-phone">
-              <PhoneIcon fontSize="small" /> {previousState.phoneNum}
+              <PhoneIcon /> {previousState.phoneNum}
             </div>
           </div>
         </div>
@@ -74,7 +74,7 @@ class PersonalInfo extends Component {
                 this.props.onSectionStatusChange('PersonalInfo', 'edit')
               }
             >
-              <EditOutlinedIcon fontSize="small" />
+              <EditOutlinedIcon />
             </button>
           </div>
           <div className="personal-info-container">

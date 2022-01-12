@@ -142,7 +142,7 @@ class WorkExperience extends Component {
                       );
                     }}
                   >
-                    <EditOutlinedIcon fontSize="small" />
+                    <EditOutlinedIcon />
                   </button>
                   <button
                     className="delete-button"
@@ -158,7 +158,7 @@ class WorkExperience extends Component {
                       });
                     }}
                   >
-                    <DeleteIcon fontSize="small" />
+                    <DeleteIcon />
                   </button>
                 </div>
                 <WorkExperienceText companyObj={companyObj} />

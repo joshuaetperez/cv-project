@@ -11,6 +11,7 @@ html {
 body {
   margin: 0;
   background-color: #e5e5e5;
+  font-size: 1.25rem;
 }
 
 p,
@@ -23,6 +24,17 @@ ul {
   margin: 0;
 }
 
+input[type='text'],
+input[type='submit'],
+input[type='button'] {
+  font-size: 1.05rem;
+}
+
+textarea {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 1.25rem;
+}
+
 #root {
   display: flex;
   justify-content: center;
@@ -30,17 +42,18 @@ ul {
 
 .page {
   width: 40%;
-  padding: 0.625em 1.25em;
+  padding: 0.625rem 1.25rem;
+  margin: 0.625rem 0;
   background-color: #fff;
   border: 1px black solid;
 }
 
 .section {
-  margin-bottom: 0.625em;
+  margin-bottom: 0.625rem;
 }
 
 .info-container {
-  margin-bottom: 0.625em;
+  margin-bottom: 0.625rem;
 }
 
 .input-container,
@@ -50,36 +63,37 @@ ul {
 
 .label-container,
 .text-field-container {
-  width: 8.125em;
+  width: 25%;
 }
 
 .text-div {
   overflow: auto;
   word-break: break-all;
-  width: 26.875em;
+  width: 75%;
 }
 
 .section-header {
   display: flex;
   align-items: center;
-  gap: 0.25em;
+  gap: 0.25rem;
 }
 
 .edit-delete-container {
   display: flex;
   align-items: center;
-  gap: 0.75em;
+  gap: 0.75rem;
 }
 
 .button-container {
   display: flex;
   justify-content: center;
-  margin: 0.625em 0;
-  gap: 0.4375em;
+  margin: 0.625rem 0;
+  gap: 0.4375rem;
 }
 
 .add-button {
-  margin-top: 0.1875em;
+  margin-top: 0.1875rem;
+  font-size: 1.05rem;
 }
 
 .edit-button,
@@ -88,8 +102,8 @@ ul {
   justify-content: center;
   align-items: center;
   background-color: transparent;
-  height: 20px;
-  width: 20px;
+  height: 24px;
+  width: 24px;
   border: none;
   cursor: pointer;
 }
@@ -108,7 +122,7 @@ ul {
   background-color: #4caf50;
   color: #fff;
   font-size: 1.125rem;
-  padding: 0.5em 3em;
+  padding: 0.5rem 3rem;
   border: 1px yellow solid;
   border-radius: 4px;
   cursor: pointer;
@@ -121,6 +135,8 @@ ul {
 #personal-info-field-empty-error,
 #education-field-empty-error,
 #work-experience-field-empty-error {
+  display: flex;
+  justify-content: center;
   color: #ff0000;
 }
 
@@ -130,38 +146,56 @@ ul {
   justify-content: space-between;
 }
 
+.preview-section-header h3 {
+  font-size: 1.75rem;
+  font-weight: normal;
+  color: #0074d9;
+}
+
 .preview-personal-info,
 .preview-education,
 .preview-work-experience,
 .preview-entry-container {
-  margin-bottom: 0.625em;
+  margin-bottom: 0.625rem;
+  overflow: auto;
+  word-break: break-all;
+}
+
+.preview-name {
+  font-size: 2rem;
+  font-weight: normal;
+  color: #004075;
+  width: 60%;
 }
 
 .preview-email-phone-container {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  width: 40%;
 }
 
 .preview-email,
 .preview-phone {
   display: flex;
   align-items: center;
-  gap: 0.1875em;
+  gap: 0.1875rem;
 }
 
 .preview-date {
-  overflow: auto;
-  word-break: break-all;
-  width: 8.125em;
+  width: 25%;
 }
 
 .preview-info-container {
   display: flex;
   flex-direction: column;
-  overflow: auto;
-  word-break: break-all;
-  width: 26.875em;
+  width: 75%;
+}
+
+.preview-date,
+.preview-school,
+.preview-company {
+  font-weight: bold;
 }
 
 .preview-personal-info:hover,
